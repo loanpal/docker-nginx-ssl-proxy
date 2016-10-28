@@ -41,6 +41,6 @@ gcp-push: gcp-build
 
 deploy: gcp-push
 	@echo "---------- Deploying to ${GCP_ENV} -----------"
-	${KUBE_SCRIPT} -e ${GCP_PROJECT} -l ${GCP_REGION} -c db set image \
+	${KUBE_SCRIPT} -e ${GCP_PROJECT} -l ${GCP_REGION} -c web set image \
 		deployment/nginx-ssl-proxy-dc nginx-ssl-proxy-dc=${GCP_VERSION_TAG}
 
